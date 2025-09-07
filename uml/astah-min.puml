@@ -1,0 +1,73 @@
+' astah-bw-cleaner.puml — true black & white, no "C" icon
+
+hide circle
+
+skinparam Shadowing false
+skinparam BackgroundColor white
+skinparam Monochrome true
+skinparam RoundCorner 0
+skinparam Padding 3
+skinparam dpi 110
+skinparam DefaultFontName "Helvetica, Arial, sans-serif"
+skinparam DefaultFontSize 13
+skinparam WrapWidth 0
+skinparam Guillemet false
+
+'—— Lines & arrows
+skinparam LineColor black
+skinparam LineThickness 1
+skinparam ArrowColor black
+skinparam ArrowThickness 1
+
+'—— Classes
+skinparam ClassBorderColor black
+skinparam ClassBackgroundColor white
+skinparam ClassBorderThickness 1
+skinparam ClassFontColor black
+skinparam ClassFontSize 13
+skinparam ClassBorderRoundCorner 0
+
+' Kill all UML icons (header + attributes/methods)
+skinparam ClassAttributeIconSize 0
+skinparam ClassHeaderIconSize 0
+skinparam UseUML2ForComponent false
+
+skinparam ClassAttributeFontColor black
+skinparam ClassAttributeFontSize 12
+skinparam ClassMethodFontColor black
+skinparam ClassMethodFontSize 12
+
+'—— Interfaces
+skinparam InterfaceBorderColor black
+skinparam InterfaceBackgroundColor white
+skinparam InterfaceBorderThickness 1
+skinparam InterfaceFontColor black
+skinparam InterfaceFontSize 13
+skinparam InterfaceBorderRoundCorner 0
+skinparam LollipopColor black
+
+'—— Abstract classes / Enums
+skinparam AbstractClassFontStyle italic
+skinparam EnumBackgroundColor white
+skinparam EnumBorderColor black
+skinparam EnumBorderRoundCorner 0
+
+'—— Packages
+skinparam PackageStyle rectangle
+skinparam PackageBackgroundColor white
+skinparam PackageBorderColor black
+skinparam PackageBorderThickness 1
+skinparam PackageBorderRoundCorner 0
+skinparam PackageFontColor black
+skinparam PackageFontSize 13
+
+'—— Notes
+skinparam NoteBackgroundColor white
+skinparam NoteBorderColor black
+skinparam NoteBorderRoundCorner 0
+skinparam NoteFontColor black
+skinparam NoteFontSize 12
+
+'—— Associations
+skinparam AssociationFontColor black
+skinparam AssociationFontSize 11

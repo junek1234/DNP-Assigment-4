@@ -1,0 +1,23 @@
+@startuml domain-model
+!include .\astah-min.puml
+class User {
+    +id: int
+    +username: string
+    +password: string
+}
+
+class Post {
+    +id: int
+    +title: string
+    +body: string
+}
+
+class Comment {
+    +id: int
+    +body: string
+    }
+
+Post "0..*" -- "1" User : writtenBy >
+Comment "0..*" -- "1" User : writtenBy >
+Post "1" -- "0..*" Comment: contains >
+@enduml

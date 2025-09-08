@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entiti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryContracts", "RepositoryContracts\RepositoryContracts.csproj", "{FCD59B1B-B7DB-4E41-996F-0C771DF382C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryRepositories", "InMemoryRepositories\InMemoryRepositories.csproj", "{65106A69-4BFD-44A0-827A-A44E660D3D65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,18 @@ Global
 		{FCD59B1B-B7DB-4E41-996F-0C771DF382C9}.Release|x64.Build.0 = Release|Any CPU
 		{FCD59B1B-B7DB-4E41-996F-0C771DF382C9}.Release|x86.ActiveCfg = Release|Any CPU
 		{FCD59B1B-B7DB-4E41-996F-0C771DF382C9}.Release|x86.Build.0 = Release|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Debug|x64.Build.0 = Debug|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Debug|x86.Build.0 = Debug|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Release|x64.ActiveCfg = Release|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Release|x64.Build.0 = Release|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Release|x86.ActiveCfg = Release|Any CPU
+		{65106A69-4BFD-44A0-827A-A44E660D3D65}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

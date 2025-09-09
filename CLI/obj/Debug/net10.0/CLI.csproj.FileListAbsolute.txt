@@ -1,0 +1,15 @@
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\CLI.exe
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\CLI.deps.json
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\CLI.runtimeconfig.json
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\CLI.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\CLI.pdb
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.GeneratedMSBuildEditorConfig.editorconfig
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.AssemblyInfoInputs.cache
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.AssemblyInfo.cs
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.csproj.CoreCompileInputs.cache
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.sourcelink.json
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\refint\CLI.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.pdb
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.genruntimeconfig.cache
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\ref\CLI.dll

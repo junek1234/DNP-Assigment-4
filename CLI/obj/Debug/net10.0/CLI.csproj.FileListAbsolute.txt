@@ -13,3 +13,11 @@ S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\refint
 S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.pdb
 S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.genruntimeconfig.cache
 S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\ref\CLI.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\Entities.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\InMemoryRepositories.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\RepositoryContracts.dll
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\InMemoryRepositories.pdb
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\RepositoryContracts.pdb
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\bin\Debug\net10.0\Entities.pdb
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.csproj.AssemblyReference.cache
+S:\University\Semester 3\DNP1\Assigments\Assigment2\CLI\obj\Debug\net10.0\CLI.csproj.Up2Date

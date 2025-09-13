@@ -9,12 +9,7 @@ public class CommentInMemoryRepository : ICommentRepository
     private List<Comment> Comments;
     public CommentInMemoryRepository()
     {
-        Comment comment = new();
-        comment.body = "comment1";
-        comment.PostId = 1;
-        comment.UserId = 1;
-
-        AddAsync(comment);
+        Comments = new List<Comment>();
     }
     public Task<Comment> AddAsync(Comment Comment)
     {
@@ -40,7 +35,7 @@ public class CommentInMemoryRepository : ICommentRepository
     }
 
 
-    public IQueryable<Comment> GetManyAsync()
+    public IQueryable<Comment> GetMany()
     {
         return Comments.AsQueryable();
     }

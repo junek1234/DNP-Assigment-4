@@ -9,11 +9,7 @@ public class UserInMemoryRepository : IUserRepository
     private List<User> Users;
     public UserInMemoryRepository()
     {
-        User user = new();
-        user.username = "user1";
-        user.password = "password1";
-        
-        AddAsync(user);
+        Users = new List<User>();
     }
     public Task<User> AddAsync(User User)
     {
@@ -39,7 +35,7 @@ public class UserInMemoryRepository : IUserRepository
     }
 
 
-    public IQueryable<User> GetManyAsync()
+    public IQueryable<User> GetMany()
     {
         return Users.AsQueryable();
     }

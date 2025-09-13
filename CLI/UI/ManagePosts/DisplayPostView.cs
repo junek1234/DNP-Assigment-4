@@ -55,7 +55,7 @@ public class DisplayPostView
     }
     public void DisplayPostsOverview()
     {
-        List<Post> posts = postRepository.GetManyAsync().ToList();
+        List<Post> posts = postRepository.GetMany().ToList();
         foreach (Post post in posts)
         {
             Console.WriteLine($"[Title: {post.Title}, Id: {post.Id}]");

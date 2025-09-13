@@ -22,7 +22,7 @@ public class CLIApp
         createUserView = new(userRepository);
         createPostView = new(postRepository, userRepository);
         createCommentView = new(commentRepository, userRepository, postRepository);
-        displayPostView = new(postRepository);
+        displayPostView = new(postRepository, commentRepository);
     }
     public async Task StartAsync()
     {
@@ -30,5 +30,6 @@ public class CLIApp
         await createPostView.displayCreatePost();
         await createCommentView.displayCreateComment();
         displayPostView.DisplayPostsOverview();
+        await displayPostView.DisplaySinglePost();
     }
 }

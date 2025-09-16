@@ -12,18 +12,17 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
-      "InMemoryRepositories/1.0.0": {
+      "FileRepositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Entities": "1.0.0",
           "RepositoryContracts": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/InMemoryRepositories.dll": {}
+          "bin/placeholder/FileRepositories.dll": {}
         },
         "runtime": {
-          "bin/placeholder/InMemoryRepositories.dll": {}
+          "bin/placeholder/FileRepositories.dll": {}
         }
       },
       "RepositoryContracts/1.0.0": {
@@ -47,10 +46,10 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
-    "InMemoryRepositories/1.0.0": {
+    "FileRepositories/1.0.0": {
       "type": "project",
-      "path": "../InMemoryRepositories/InMemoryRepositories.csproj",
-      "msbuildProject": "../InMemoryRepositories/InMemoryRepositories.csproj"
+      "path": "../FileRepositories/FileRepositories.csproj",
+      "msbuildProject": "../FileRepositories/FileRepositories.csproj"
     },
     "RepositoryContracts/1.0.0": {
       "type": "project",
@@ -60,7 +59,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "InMemoryRepositories >= 1.0.0",
+      "FileRepositories >= 1.0.0",
       "RepositoryContracts >= 1.0.0"
     ]
   },
@@ -96,8 +95,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment3\\InMemoryRepositories\\InMemoryRepositories.csproj": {
-              "projectPath": "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment3\\InMemoryRepositories\\InMemoryRepositories.csproj"
+            "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment3\\FileRepositories\\FileRepositories.csproj": {
+              "projectPath": "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment3\\FileRepositories\\FileRepositories.csproj"
             },
             "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment3\\RepositoryContracts\\RepositoryContracts.csproj": {
               "projectPath": "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment3\\RepositoryContracts\\RepositoryContracts.csproj"

@@ -24,7 +24,7 @@ public class CLIApp
         createPostView = new(postRepository, userRepository);
         createCommentView = new(commentRepository, userRepository, postRepository);
         displayPostView = new(postRepository, commentRepository);
-        generateDummyData();
+        // generateDummyData();
     }
     public async Task StartAsync()
     {

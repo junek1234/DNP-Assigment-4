@@ -35,7 +35,20 @@ namespace WebAPI.Controllers
 
         private async Task VerifyUserNameIsAvailableAsync(string userName)
         {
-            //TODO
+            List<User> users = (List<User>)userRepo.GetMany();
+            bool available = true;
+            foreach (User user in users)
+            {
+                if (user.Username.Equals(userName))
+                {
+                    available = false;
+                }
+            }
+            if (!available)
+            {
+                throw new Exception("User name is already taken.");
+
+            }
         }
 
         [HttpPatch("{id:int}")]
@@ -61,10 +74,16 @@ namespace WebAPI.Controllers
             return Ok(dto);
         }
         [HttpGet]
-        public async Task<ActionResult<List<User>>> GetUsers([FromQuery] string? titleContains = null, [FromQuery] int? userId = null)
+        public async Task<ActionResult<List<User>>> GetUsers()
         {
             List<User> users = (List<User>)userRepo.GetMany();
             return Ok(users);
+        }
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<User>> DeleteUser([FromRoute] int id)
+        {
+            await userRepo.DeleteAsync(id);
+            return NoContent();
         }
     }
 

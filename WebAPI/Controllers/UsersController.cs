@@ -74,10 +74,14 @@ namespace WebAPI.Controllers
             return Ok(dto);
         }
         [HttpGet]
-        public async Task<ActionResult<List<User>>> GetUsers()
+        public async Task<ActionResult<List<User>>> GetUsers([FromQuery] string? usernameContains = null)
         {
-            List<User> users = (List<User>)userRepo.GetMany();
-            return Ok(users);
+            IEnumerable<User> users = userRepo.GetMany();
+            if (usernameContains != null)
+            {
+                users = users.Where(u => u.Username.Contains(usernameContains));
+            }
+            return Ok(users.ToList());
         }
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<User>> DeleteUser([FromRoute] int id)
@@ -87,5 +91,5 @@ namespace WebAPI.Controllers
         }
     }
 
-    
+
 }

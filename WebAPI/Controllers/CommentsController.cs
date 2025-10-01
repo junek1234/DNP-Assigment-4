@@ -12,10 +12,12 @@ namespace WebAPI.Controllers
     public class CommentsController : ControllerBase
     {
         private readonly ICommentRepository CommentRepo;
+        private readonly IUserRepository userRepository;
 
-        public CommentsController(ICommentRepository CommentRepo)
+        public CommentsController(ICommentRepository CommentRepo, IUserRepository userRepository)
         {
             this.CommentRepo = CommentRepo;
+            this.userRepository = userRepository;
         }
 
         [HttpPost]
@@ -45,10 +47,29 @@ namespace WebAPI.Controllers
             return Ok(CommentToGet);
         }
         [HttpGet]
-        public async Task<ActionResult<List<Comment>>> GetComments()
+        public async Task<ActionResult<List<Comment>>> GetComments([FromQuery] int? writtenById = null, [FromQuery] string? writtenByName = null, [FromQuery] int? postId = null)
         {
-            List<Comment> Comments = (List<Comment>)CommentRepo.GetMany();
-            return Ok(Comments);
+            IEnumerable<Comment> Comments = CommentRepo.GetMany();
+            
+           
+            if (writtenById!=null)
+            {
+                Comments = Comments.Where(c => c.UserId == writtenById);
+            }
+
+            if (writtenByName!=null)
+            {
+                var userIds = userRepository.GetMany()
+                    .Where(u => u.Username.Equals(writtenByName))
+                    .Select(u => u.Id);
+                Comments = Comments.Where(c => userIds.Contains(c.UserId));
+            }
+            if (postId != null)
+            {
+                Comments = Comments.Where(c => c.PostId == postId);
+            }
+
+            return Ok(Comments.ToList());
         }
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Comment>> DeleteComment([FromRoute] int id)

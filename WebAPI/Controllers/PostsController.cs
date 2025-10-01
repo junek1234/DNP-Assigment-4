@@ -12,10 +12,11 @@ namespace WebAPI.Controllers
     public class PostsController : ControllerBase
     {
         private readonly IPostRepository PostRepo;
-
-        public PostsController(IPostRepository PostRepo)
+        private readonly IUserRepository userRepository;
+        public PostsController(IPostRepository PostRepo, IUserRepository userRepository)
         {
             this.PostRepo = PostRepo;
+            this.userRepository = userRepository;
         }
 
         [HttpPost]
@@ -51,10 +52,29 @@ namespace WebAPI.Controllers
             return Ok(PostToGet);
         }
         [HttpGet]
-        public async Task<ActionResult<List<Post>>> GetPosts()
+        public async Task<ActionResult<List<Post>>> GetPosts([FromQuery] string? titleContains = null, [FromQuery] int? writtenById = null, [FromQuery] string? writtenByName = null)
         {
-            List<Post> Posts = (List<Post>)PostRepo.GetMany();
-            return Ok(Posts);
+            IEnumerable<Post> posts = PostRepo.GetMany();
+            
+            if (titleContains!=null)
+            {
+                posts = posts.Where(p => p.Title.Contains(titleContains));
+            }
+
+            if (writtenById!=null)
+            {
+                posts = posts.Where(p => p.UserId == writtenById);
+            }
+
+            if (writtenByName!=null)
+            {
+                var userIds = userRepository.GetMany()
+                    .Where(u => u.Username.Equals(writtenByName))
+                    .Select(u => u.Id);
+                posts = posts.Where(p => userIds.Contains(p.UserId));
+            }
+
+            return Ok(posts.ToList());
         }
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<Post>> DeletePost([FromRoute] int id)

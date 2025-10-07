@@ -69,7 +69,7 @@ public class UserFileRepository : IUserRepository
     {
         string UsersAsJson = await File.ReadAllTextAsync(filePath);
         List<User> Users = JsonSerializer.Deserialize<List<User>>(UsersAsJson)!;
-        User? UserToUpdate = Users.SingleOrDefault(User);
+    User? UserToUpdate = Users.SingleOrDefault(u => u.Id == User.Id);
          if (UserToUpdate is null)
         {
             throw new InvalidOperationException(

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiContracts\ApiContracts.csproj" />
+    <ProjectReference Include="..\Shared\ApiContracts\ApiContracts.csproj" />
     <ProjectReference Include="..\FileRepositories\FileRepositories.csproj" />
   </ItemGroup>
 

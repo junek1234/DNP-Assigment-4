@@ -7,7 +7,7 @@ using RepositoryContracts;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
 
         private async Task VerifyUserNameIsAvailableAsync(string userName)
         {
-            List<User> users = (List<User>)userRepo.GetMany();
+            IEnumerable<User> users = userRepo.GetMany();
             bool available = true;
             foreach (User user in users)
             {
@@ -54,6 +54,7 @@ namespace WebAPI.Controllers
         [HttpPatch("{id:int}")]
         public async Task<ActionResult<User>> UpdateUser([FromRoute] int id, [FromBody] UpdateUserDto request)
         {
+            await VerifyUserNameIsAvailableAsync(request.NewUserName);
             User userToUpdate = await userRepo.GetSingleAsync(id);
             userToUpdate.Username = request.NewUserName;
             userToUpdate.Password = request.NewPassword;
@@ -81,7 +82,16 @@ namespace WebAPI.Controllers
             {
                 users = users.Where(u => u.Username.Contains(usernameContains));
             }
-            return Ok(users.ToList());
+            List<UserDto> dtoUsers=new();
+            foreach (User user in users)
+            {
+                dtoUsers.Add(new UserDto
+                {
+                    Id = user.Id,
+                    UserName = user.Username
+                });
+            }
+            return Ok(dtoUsers);
         }
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<User>> DeleteUser([FromRoute] int id)

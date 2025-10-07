@@ -71,7 +71,7 @@ public class CLIApp
         List<User> users = new List<User>();
         for (int i = 1; i <= 5; i++)
         {
-            User user = new User { Username = $"DummyUser{i}", Password = $"Password{i}" };
+            User user = new User($"DummyUser{i}", $"Password{i}");
             User addedUser = await userRepository.AddAsync(user);
             users.Add(addedUser);
         }
@@ -79,24 +79,21 @@ public class CLIApp
         List<Post> posts = new List<Post>();
         for (int i = 1; i <= 5; i++)
         {
-            Post post = new Post
-            {
-                Title = $"Dummy Post {i}",
-                Body = $"This is the body of dummy post {i}.",
-                UserId = users[(i - 1) % users.Count].Id
-            };
+            Post post = new Post(
+                $"Dummy Post {i}",
+                $"This is the body of dummy post {i}.",
+                users[(i - 1) % users.Count].Id
+            );
             Post addedPost = await postRepository.AddAsync(post);
             posts.Add(addedPost);
         }
 
         for (int i = 1; i <= 5; i++)
         {
-            Comment comment = new Comment
-            {
-                Body = $"This is dummy comment {i}.",
-                UserId = users[(i - 1) % users.Count].Id,
-                PostId = posts[(i - 1) % posts.Count].Id
-            };
+            int userId = users[(i - 1) % users.Count].Id;
+            int postId = posts[(i - 1) % posts.Count].Id;
+            string body = $"This is dummy comment {i}.";
+            Comment comment = new Comment(postId, userId, body);
             await commentRepository.AddAsync(comment);
         }
     }

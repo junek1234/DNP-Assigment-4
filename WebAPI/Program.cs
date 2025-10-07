@@ -19,9 +19,6 @@ builder.Services.AddScoped<ICommentRepository, CommentFileRepository>();
 
 var app = builder.Build();
 
-app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
-
-app.MapControllers();
 
 // if (app.Environment.IsDevelopment())
 // {
@@ -34,5 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+app.MapControllers();
 
 app.Run();

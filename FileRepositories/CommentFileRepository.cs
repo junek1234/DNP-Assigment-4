@@ -69,7 +69,7 @@ public class CommentFileRepository : ICommentRepository
     {
         string commentsAsJson = await File.ReadAllTextAsync(filePath);
         List<Comment> comments = JsonSerializer.Deserialize<List<Comment>>(commentsAsJson)!;
-        Comment? commentToUpdate = comments.SingleOrDefault(comment);
+    Comment? commentToUpdate = comments.SingleOrDefault(c => c.Id == comment.Id);
          if (commentToUpdate is null)
         {
             throw new InvalidOperationException(

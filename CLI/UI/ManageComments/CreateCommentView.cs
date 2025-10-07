@@ -73,12 +73,7 @@ public class CreateCommentView
         
 
 
-        Comment comment = new Comment
-        {
-            Body = body,
-            UserId = userId,
-            PostId = postId
-        };
+        Comment comment = new Comment(userId, postId, body);
         Comment created = await commentRepository.AddAsync(comment);
         Console.WriteLine($"Comment with Body: {created.Body} written by user: {created.UserId} on the post: {created.PostId}");
     }

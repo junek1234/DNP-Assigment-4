@@ -1,0 +1,12 @@
+S:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\bin\Debug\net10.0\ApiContracts.deps.json
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\bin\Debug\net10.0\ApiContracts.dll
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\bin\Debug\net10.0\ApiContracts.pdb
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.GeneratedMSBuildEditorConfig.editorconfig
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.AssemblyInfoInputs.cache
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.AssemblyInfo.cs
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.csproj.CoreCompileInputs.cache
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.sourcelink.json
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.dll
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\refint\ApiContracts.dll
+s:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ApiContracts.pdb
+S:\University\Semester 3\DNP1\Assigments\Assigment4\Shared\ApiContracts\obj\Debug\net10.0\ref\ApiContracts.dll

@@ -69,7 +69,7 @@ public class PostFileRepository : IPostRepository
     {
         string PostsAsJson = await File.ReadAllTextAsync(filePath);
         List<Post> Posts = JsonSerializer.Deserialize<List<Post>>(PostsAsJson)!;
-        Post? PostToUpdate = Posts.SingleOrDefault(Post);
+    Post? PostToUpdate = Posts.SingleOrDefault(p => p.Id == Post.Id);
          if (PostToUpdate is null)
         {
             throw new InvalidOperationException(

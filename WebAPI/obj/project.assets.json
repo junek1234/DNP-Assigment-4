@@ -124,8 +124,8 @@
     },
     "ApiContracts/1.0.0": {
       "type": "project",
-      "path": "../ApiContracts/ApiContracts.csproj",
-      "msbuildProject": "../ApiContracts/ApiContracts.csproj"
+      "path": "../Shared/ApiContracts/ApiContracts.csproj",
+      "msbuildProject": "../Shared/ApiContracts/ApiContracts.csproj"
     },
     "Entities/1.0.0": {
       "type": "project",
@@ -182,11 +182,11 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment4\\ApiContracts\\ApiContracts.csproj": {
-              "projectPath": "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment4\\ApiContracts\\ApiContracts.csproj"
-            },
             "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment4\\FileRepositories\\FileRepositories.csproj": {
               "projectPath": "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment4\\FileRepositories\\FileRepositories.csproj"
+            },
+            "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment4\\Shared\\ApiContracts\\ApiContracts.csproj": {
+              "projectPath": "S:\\University\\Semester 3\\DNP1\\Assigments\\Assigment4\\Shared\\ApiContracts\\ApiContracts.csproj"
             }
           }
         }

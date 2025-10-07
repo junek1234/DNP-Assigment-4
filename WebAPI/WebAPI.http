@@ -43,3 +43,76 @@ Accept: application/json
 ###
 GET {{WebAPI_HostAddress}}/users/2
 Accept: application/json
+
+
+
+###
+POST {{WebAPI_HostAddress}}/posts
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Title": "newtitle123",
+    "Body": "newBody123",
+    "UserId":"1"
+}
+
+###
+GET {{WebAPI_HostAddress}}/posts
+Accept: application/json
+
+###
+GET {{WebAPI_HostAddress}}/posts/1
+Accept: application/json
+
+###
+GET {{WebAPI_HostAddress}}/posts?writtenById=1
+Accept: application/json
+###
+PATCH {{WebAPI_HostAddress}}/posts/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Body": "updatedBody",
+    "Title": "updatedTitle"
+}
+###
+DELETE {{WebAPI_HostAddress}}/posts/1
+Accept: application/json
+
+###
+POST {{WebAPI_HostAddress}}/comments
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Body": "new comment body",
+    "UserId": 1,
+    "PostId": 1
+}
+
+###
+GET {{WebAPI_HostAddress}}/comments
+Accept: application/json
+
+###
+GET {{WebAPI_HostAddress}}/comments/1
+Accept: application/json
+
+###
+GET {{WebAPI_HostAddress}}/comments?writtenById=1&writtenByName=someUser&postId=1
+Accept: application/json
+
+###
+PATCH {{WebAPI_HostAddress}}/comments/1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Body": "updated comment body"
+}
+
+###
+DELETE {{WebAPI_HostAddress}}/comments/1
+Accept: application/json

@@ -34,7 +34,6 @@ namespace WebAPI.Controllers
         {
             Comment CommentToUpdate = await CommentRepo.GetSingleAsync(id);
             CommentToUpdate.Body = request.Body;
-            //TODO: sth to check if the user wrote this
             await CommentRepo.UpdateAsync(CommentToUpdate);
 
             return NoContent();

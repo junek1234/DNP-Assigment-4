@@ -39,7 +39,6 @@ namespace WebAPI.Controllers
             Post PostToUpdate = await PostRepo.GetSingleAsync(id);
             PostToUpdate.Body = request.Body;
             PostToUpdate.Title = request.Title;
-            //TODO: sth to check if the user wrote this
             await PostRepo.UpdateAsync(PostToUpdate);
 
             return NoContent();

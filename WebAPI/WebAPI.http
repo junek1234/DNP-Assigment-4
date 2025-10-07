@@ -54,7 +54,7 @@ Accept: application/json
 {
     "Title": "newtitle123",
     "Body": "newBody123",
-    "UserId":"1"
+    "UserId":"3"
 }
 
 ###
@@ -88,7 +88,7 @@ Accept: application/json
 
 {
     "Body": "new comment body",
-    "UserId": 1,
+    "UserId": 3,
     "PostId": 1
 }
 
@@ -101,7 +101,7 @@ GET {{WebAPI_HostAddress}}/comments/1
 Accept: application/json
 
 ###
-GET {{WebAPI_HostAddress}}/comments?writtenById=1&writtenByName=someUser&postId=1
+GET {{WebAPI_HostAddress}}/comments?writtenById=3&writtenByName=updatedUser1235&postId=1
 Accept: application/json
 
 ###

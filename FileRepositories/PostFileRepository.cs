@@ -36,8 +36,7 @@ public class PostFileRepository : IPostRepository
         Post? PostToRemove = Posts.SingleOrDefault(p => p.Id == id);
         if (PostToRemove is null)
         {
-            throw new InvalidOperationException(
-                            $"Post with ID '{id}' not found");
+            throw new NotFoundException($"Post with ID '{id}' not found");
         }
         Posts.Remove(PostToRemove);
         PostsAsJson = JsonSerializer.Serialize(Posts);
@@ -59,8 +58,7 @@ public class PostFileRepository : IPostRepository
         Post? Post = Posts.SingleOrDefault(p => p.Id == id);
          if (Post is null)
         {
-            throw new InvalidOperationException(
-                            $"Post with ID '{id}' not found");
+            throw new NotFoundException($"Post with ID '{id}' not found");
         }
         return Post;
     }
@@ -72,8 +70,7 @@ public class PostFileRepository : IPostRepository
     Post? PostToUpdate = Posts.SingleOrDefault(p => p.Id == Post.Id);
          if (PostToUpdate is null)
         {
-            throw new InvalidOperationException(
-                            $"Post with ID '{Post.Id}' not found");
+            throw new NotFoundException($"Post with ID '{Post.Id}' not found");
         }
         Posts.Remove(PostToUpdate);
         Posts.Add(Post);

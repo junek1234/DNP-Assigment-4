@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RepositoryContracts;
 using System;
 using System.Threading.Tasks;
 
@@ -21,26 +22,17 @@ namespace LearnWebAPI.Middlewares
             {
                 await next(context);
             }
+            catch (NotFoundException nEx)
+            {
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsJsonAsync(nEx.Message);
+            }
             catch (Exception ex)
             {
-                var traceId = Guid.NewGuid();
-                _logger.LogError(ex,
-                    "An unhandled exception occurred. TraceId: {TraceId}, Message: {Message}",
-                    traceId, ex.Message);
 
-                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = 500;
+                await context.Response.WriteAsJsonAsync(ex.Message);
 
-                var problemDetails = new ProblemDetails
-                {
-                    Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
-                    Title = "Internal Server Error",
-                    Status = StatusCodes.Status500InternalServerError,
-                    Instance = context.Request.Path,
-                    Detail = $"Internal server error occurred. TraceId: {traceId}"
-                };
-
-                await context.Response.WriteAsJsonAsync(problemDetails);
             }
         }
     }

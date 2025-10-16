@@ -36,8 +36,7 @@ public class CommentFileRepository : ICommentRepository
         Comment? CommentToRemove = comments.SingleOrDefault(p => p.Id == id);
         if (CommentToRemove is null)
         {
-            throw new InvalidOperationException(
-                            $"Comment with ID '{id}' not found");
+            throw new NotFoundException($"Comment with ID '{id}' not found");
         }
         comments.Remove(CommentToRemove);
         commentsAsJson = JsonSerializer.Serialize(comments);
@@ -59,8 +58,7 @@ public class CommentFileRepository : ICommentRepository
         Comment? comment = comments.SingleOrDefault(p => p.Id == id);
          if (comment is null)
         {
-            throw new InvalidOperationException(
-                            $"Comment with ID '{id}' not found");
+            throw new NotFoundException($"Comment with ID '{id}' not found");
         }
         return comment;
     }
@@ -72,8 +70,7 @@ public class CommentFileRepository : ICommentRepository
     Comment? commentToUpdate = comments.SingleOrDefault(c => c.Id == comment.Id);
          if (commentToUpdate is null)
         {
-            throw new InvalidOperationException(
-                            $"Comment with ID '{comment.Id}' not found");
+            throw new NotFoundException($"Comment with ID '{comment.Id}' not found");
         }
         comments.Remove(commentToUpdate);
         comments.Add(comment);

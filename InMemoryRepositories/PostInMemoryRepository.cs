@@ -27,8 +27,7 @@ public class PostInMemoryRepository : IPostRepository
         Post? postToRemove = Posts.SingleOrDefault(p => p.Id == id);
         if (postToRemove is null)
         {
-            throw new InvalidOperationException(
-                            $"Post with ID '{id}' not found");
+            throw new NotFoundException($"Post with ID '{id}' not found");
         }
 
         Posts.Remove(postToRemove);
@@ -47,8 +46,7 @@ public class PostInMemoryRepository : IPostRepository
         Post? post = Posts.SingleOrDefault(p => p.Id == id);
         if (post is null)
         {
-            throw new InvalidOperationException(
-                            $"Post with ID '{id}' not found");
+            throw new NotFoundException($"Post with ID '{id}' not found");
         }
         return Task.FromResult(post);
     }
@@ -59,8 +57,7 @@ public class PostInMemoryRepository : IPostRepository
         Post? existingPost = Posts.SingleOrDefault(p => p.Id == post.Id);
         if (existingPost is null)
         {
-            throw new InvalidOperationException(
-                    $"Post with ID '{post.Id}' not found");
+            throw new NotFoundException($"Post with ID '{post.Id}' not found");
         }
 
         Posts.Remove(existingPost);

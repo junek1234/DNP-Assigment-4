@@ -45,6 +45,16 @@ public class JsonClient
     {
         var response = await _client.PatchAsJsonAsync(path, item, _options);
         response.EnsureSuccessStatusCode();
+
+        // If the server returned 204 No Content (or an empty body), avoid trying to deserialize.
+        // Many APIs return NoContent() for PATCH/PUT; in that case, return the original item as a fallback.
+        if (response.StatusCode == System.Net.HttpStatusCode.NoContent ||
+            response.Content == null ||
+            response.Content.Headers.ContentLength == 0)
+        {
+            return item;
+        }
+
         var returned = await response.Content.ReadFromJsonAsync<T>(_options);
         if (returned == null) throw new JsonException("Failed to deserialize response.");
         return returned;
@@ -71,7 +81,7 @@ public class JsonClient
     public Task<ICollection<Comment>> GetCommentsAsync() => GetCollectionAsync<Comment>("comments");
     public Task<CreateCommentDto> CreateCommentAsync(CreateCommentDto comment) => CreateAsync("comments", comment);
     public Task<Comment?> GetCommentAsync(int id) => GetAsync<Comment>($"comments/{id}");
-    public Task<UpdateCommentDto> UpdateCommentAsync(int id, UpdateCommentDto comment) => UpdateAsync($"comment/{id}", comment);
+    public Task<UpdateCommentDto> UpdateCommentAsync(int id, UpdateCommentDto comment) => UpdateAsync($"comments/{id}", comment);
     public Task DeleteCommentAsync(int id) => DeleteAsync($"comments/{id}");
 
     // Users

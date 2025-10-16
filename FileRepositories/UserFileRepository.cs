@@ -34,11 +34,10 @@ public class UserFileRepository : IUserRepository
         string UsersAsJson = await File.ReadAllTextAsync(filePath);
         List<User> Users = JsonSerializer.Deserialize<List<User>>(UsersAsJson)!;
         User? UserToRemove = Users.SingleOrDefault(p => p.Id == id);
-        if (UserToRemove is null)
-        {
-            throw new InvalidOperationException(
-                            $"User with ID '{id}' not found");
-        }
+            if (UserToRemove is null)
+            {
+                throw new NotFoundException($"User with ID '{id}' not found");
+            }
         Users.Remove(UserToRemove);
         UsersAsJson = JsonSerializer.Serialize(Users);
         await File.WriteAllTextAsync(filePath, UsersAsJson);
@@ -59,9 +58,8 @@ public class UserFileRepository : IUserRepository
         User? User = Users.SingleOrDefault(p => p.Id == id);
          if (User is null)
         {
-            throw new InvalidOperationException(
-                            $"User with ID '{id}' not found");
-        }
+                throw new NotFoundException($"User with ID '{id}' not found");
+            }
         return User;
     }
 
@@ -72,8 +70,7 @@ public class UserFileRepository : IUserRepository
     User? UserToUpdate = Users.SingleOrDefault(u => u.Id == User.Id);
          if (UserToUpdate is null)
         {
-            throw new InvalidOperationException(
-                            $"User with ID '{User.Id}' not found");
+            throw new NotFoundException($"User with ID '{User.Id}' not found");
         }
         Users.Remove(UserToUpdate);
         Users.Add(User);
